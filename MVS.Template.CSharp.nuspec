@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>MVS.Template.CSharp</id>
+    <version>1.0.0</version>
+    <description>
+      Creates the MVS template web app.
+    </description>
+    <authors>Matheus V Souza</authors>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+    <files>
+      <file src="**\*.*" exclude="content/.vs/**/*.*;content/.sonarqube;content/.env;content/CodeCover/**/*.*;content/.git/**/*.*" />
+    </files>
+</package>

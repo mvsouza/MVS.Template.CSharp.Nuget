@@ -1,0 +1,10 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Matheus V Souza",
+    "classifications": [ "Web" ],
+    "identity": "MVS.Template.CSharp",
+    "name": "MVS web Application",
+    "shortName": "mvs",
+    "sourceName": "MVS.Template.CSharp"
+  }
+  
