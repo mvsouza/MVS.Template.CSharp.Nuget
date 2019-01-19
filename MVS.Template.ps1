@@ -27,7 +27,7 @@ process {
         script = {
             git clone https://github.com/mvsouza/MVS.Template.CSharp.git temp;
             $gitversion = ConvertFrom-Json "$(gitversion .\temp\)"
-            $NuGetVersionV2 = $gitversion.NuGetVersionV2
+            $global:NuGetVersionV2 = $gitversion.NuGetVersionV2
             ls content  | ? {$_.Name -ne  ".template.config"} | %{rm $_.FullName -Recurse -Force}; #rm content/* -Exclude .template.config/* -Recurse;
             mv .\temp\* .\content\;
             rm temp -Force -Recurse
@@ -40,7 +40,7 @@ process {
             #dotnet clean .\content\MVS.Template.CSharp.sln -ErrorAction SilentlyContinue;
             dotnet new -u mvs; 
             if (Test-Path .\MVS.Template.CSharp.*.nupkg) { rm .\MVS.Template.CSharp.*.nupkg -Force}
-            nuget pack .\MVS.Template.CSharp.nuspec;
+            nuget pack .\MVS.Template.CSharp.nuspec -version $global:NuGetVersionV2;
             dotnet new -i .\MVS.Template.CSharp.*.nupkg;
         }
     });

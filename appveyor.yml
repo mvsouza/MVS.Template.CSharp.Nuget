@@ -1,0 +1,10 @@
+image: Visual Studio 2017
+before_build:
+  - choco install gitversion
+build_script:
+  - ps: .\MVS.Template.ps1 install
+deploy:
+  provider: NuGet
+  api_key: $api_key
+  skip_symbols: false
+  artifact: /.*\.nupkg/
