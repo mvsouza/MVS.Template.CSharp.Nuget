@@ -1,0 +1,3 @@
+content/**
+!content/.template.config/**
+MVS.Template.CSharp.*.nupkg
