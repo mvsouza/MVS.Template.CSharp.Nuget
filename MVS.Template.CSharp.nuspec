@@ -11,7 +11,4 @@
       <packageType name="Template" />
     </packageTypes>
   </metadata>
-    <files>
-      <file src="**\*.*" exclude="content/.vs/**/*.*;content/.sonarqube;content/.env;content/CodeCover/**/*.*;content/.git/**/*.*" />
-    </files>
 </package>
