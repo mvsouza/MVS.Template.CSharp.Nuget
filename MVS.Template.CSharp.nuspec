@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>MVS.Template.CSharp</id>
-    <version>1.0.0</version>
+    <version>$version$</version>
     <description>
       Creates the MVS template web app.
     </description>
