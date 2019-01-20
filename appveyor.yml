@@ -9,3 +9,4 @@ deploy:
     secure: ROObH96V4PKca6fhWnjQ/LMahI+KCgR5j6O9nwq1wxS3i8qb5u25sVK+cdiqNjWH 
   skip_symbols: false
   artifact: /.*\.nupkg/
+  verbosity: detailed
