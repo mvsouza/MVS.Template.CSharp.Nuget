@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
     [parameter(Mandatory=$true, Position=1)]
-    [ValidateSet("install")]
+    [ValidateSet("install","publish")]
     [string]$action,
     [parameter(Mandatory=$false)]
     [switch]$all
@@ -44,6 +44,15 @@ process {
             dotnet new -i .\MVS.Template.CSharp.*.nupkg;
         }
     });
+
+    
+    $tasks.Add("publish",@{
+        description="Publish the template on dotnet";
+        script = {
+            dotnet nuget push .\MVS.Template.CSharp.*.nupkg -k $env:api_key -s https://api.nuget.org/v3/index.json
+        }
+    });
+
     if ($action) {
         $task = $tasks.Get_Item($action)
         if($task){
