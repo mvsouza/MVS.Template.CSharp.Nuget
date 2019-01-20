@@ -26,6 +26,7 @@ process {
         description="Update the template content";
         script = {
             git clone https://github.com/mvsouza/MVS.Template.CSharp.git temp;
+            ls temp;
             $gitversion = ConvertFrom-Json "$(gitversion .\temp\)"
             $global:NuGetVersionV2 = $gitversion.NuGetVersionV2
             ls content  | ? {$_.Name -ne  ".template.config"} | %{rm $_.FullName -Recurse -Force}; #rm content/* -Exclude .template.config/* -Recurse;
@@ -42,6 +43,7 @@ process {
             if (Test-Path .\MVS.Template.CSharp.*.nupkg) { rm .\MVS.Template.CSharp.*.nupkg -Force}
             nuget pack .\MVS.Template.CSharp.nuspec -version $global:NuGetVersionV2;
             dotnet new -i .\MVS.Template.CSharp.*.nupkg;
+            ls;
         }
     });
     if ($action) {
