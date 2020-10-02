@@ -1,8 +1,7 @@
-image: Visual Studio 2017
-before_build:
-  - choco install gitversion
+image: Visual Studio 2019
+platform: Any CPU
 build_script:
-  - ps: .\MVS.Template.ps1 install
+  - fake.cmd run build.fsx -t Pack
 deploy:
   provider: NuGet
   api_key: $api_key

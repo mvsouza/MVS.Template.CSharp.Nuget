@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "fake-cli": {
+      "version": "5.19.1",
+      "commands": [
+        "fake"
+      ]
+    },
+    "paket": {
+      "version": "5.245.2",
+      "commands": [
+        "paket"
+      ]
+    },
+    "dotnet-reportgenerator-globaltool": {
+      "version": "4.6.0",
+      "commands": [
+        "reportgenerator"
+      ]
+    },
+    "gitversion.tool": {
+      "version": "5.3.7",
+      "commands": [
+        "dotnet-gitversion"
+      ]
+    }
+  }
+}

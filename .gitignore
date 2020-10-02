@@ -1,3 +1,6 @@
-content/**
-!content/.template.config/**
+content
+temp
+.fake
 MVS.Template.CSharp.*.nupkg
+MVS.Template.CSharp.*.nuspec
+build.fsx.lock
