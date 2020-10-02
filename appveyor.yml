@@ -1,7 +1,6 @@
 image: Visual Studio 2019
-platform: Any CPU
 build_script:
-  - fake.cmd run build.fsx -t Pack
+  - cmd: fake.cmd -v run build.fsx -t Pack 
 deploy:
   provider: NuGet
   api_key: $api_key

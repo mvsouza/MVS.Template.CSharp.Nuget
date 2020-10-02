@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
-  <metadata>
-    <id>MVS.Template.CSharp</id>
-    <version>$version$</version>
-    <description>
-      Creates the MVS template web app.
-    </description>
-    <authors>Matheus V Souza</authors>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>@project@</id>
+    <version>@build.number@</version>
+    <authors>@authors@</authors>
+    <owners>@authors@</owners>
+    <projectUrl>https://github.com/mvsouza/MVS.Template.CSharp</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
+    <description>@description@</description>
+    <copyright>Copyright GitHub 2013</copyright>
   </metadata>
 </package>

@@ -93,26 +93,23 @@ type GitVersionProperties = {
 }
 
 let generateProperties (setParams : GitversionParams -> GitversionParams) =
-    let result = CreateProcess.fromRawCommand "dotnet" ["gitversion"]
+    let result = CreateProcess.fromRawCommand "dotnet" ["gitversion"; "./temp"]
                 |> CreateProcess.redirectOutput
                 |> Proc.run
     if result.ExitCode <> 0 then failwithf "GitVersion.exe failed with exit code %i and message %s" result.ExitCode (String.concat "" [result.Result.Output])
     result.Result.Output |> JsonConvert.DeserializeObject<GitVersionProperties>
 
-let getGitHash =
-    let _,msg,error = runGitCommand tempFolder "log --oneline -1"
-    if error <> "" then failwithf "git log --oneline failed: %s" error
-    let log = msg |> Seq.head
-    log.Split(' ') |> Seq.head 
-
 Target.create "Pack" (fun _ ->
     let version = generateProperties id
     NuGet.NuGet (fun p -> 
         { p with
+            Project = "MVS.Template.CSharp"
             ToolPath = "nuget"
             Version = version.FullSemVer
             OutputPath = "./"
             WorkingDir = "./"
+            Description = "Creates the MVS template web app."
+            Authors = ["mvsouza"]
         }
     ) "MVS.Template.CSharp.nuspec"
 )
