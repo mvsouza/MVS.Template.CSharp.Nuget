@@ -27,8 +27,8 @@ open FSharp.Data
 open System
 open System.IO
 
-let branch = "develop"
-let tempFolder = "temp"
+let branch = (Environment.environVarOrFail "BRANCH")
+let tempFolder = "temp" 
 
 Target.create "Clean" (fun _ ->
     !! "temp/.git"
